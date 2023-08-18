@@ -44,7 +44,7 @@ export default function Form({ type }: { type: "login" | "register" }) {
           }).then(async (res) => {
             setLoading(false);
             if (res.status === 200) {
-              toast.success("Account created! Redirecting to login...");
+              toast.success("Conta criada!Redirecionando para o login ...");
               setTimeout(() => {
                 router.push("/login");
               }, 2000);
@@ -62,13 +62,13 @@ export default function Form({ type }: { type: "login" | "register" }) {
           htmlFor="email"
           className="block text-xs text-gray-600 uppercase"
         >
-          Email Address
+          Endereço de email
         </label>
         <input
           id="email"
           name="email"
           type="email"
-          placeholder="panic@thedis.co"
+          placeholder="jorge@benjor.com"
           autoComplete="email"
           required
           className="mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
@@ -79,7 +79,7 @@ export default function Form({ type }: { type: "login" | "register" }) {
           htmlFor="password"
           className="block text-xs text-gray-600 uppercase"
         >
-          Password
+          Senha
         </label>
         <input
           id="password"
@@ -100,24 +100,24 @@ export default function Form({ type }: { type: "login" | "register" }) {
         {loading ? (
           <LoadingDots color="#808080" />
         ) : (
-          <p>{type === "login" ? "Sign In" : "Sign Up"}</p>
+          <p>{type === "login" ? "Entrar": "Inscreva-se"}</p>
         )}
       </button>
       {type === "login" ? (
         <p className="text-center text-sm text-gray-600">
-          Don&apos;t have an account?{" "}
+          Não tem uma conta?{" "}
           <Link href="/register" className="font-semibold text-gray-800">
-            Sign up
+            Inscrever-se
           </Link>{" "}
-          for free.
+          de graça.
         </p>
       ) : (
         <p className="text-center text-sm text-gray-600">
-          Already have an account?{" "}
+          Já tem uma conta?{" "}
           <Link href="/login" className="font-semibold text-gray-800">
-            Sign in
+            Entrar
           </Link>{" "}
-          instead.
+          em vez de.
         </p>
       )}
     </form>
